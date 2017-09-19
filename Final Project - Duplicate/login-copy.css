@@ -1,0 +1,252 @@
+
+/******************************************
+/* SETUP
+/*******************************************/
+
+* {
+
+  box-sizing: border-box; 
+}
+
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+#login {
+  position: relative;
+}
+
+body {
+  background-color: #ffffff;
+  color: #033048;
+  font-size: 12px;
+  line-height: 1.4;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.login-button:hover {
+  background-color: white;
+  color: black;
+  opacity: 0.5;
+}
+
+a.register-button:hover {
+  background-color: white;
+  color: black;
+  opacity: 0.5;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+#form {
+  display: flex;
+}
+
+h2 {
+
+  font-size: 20px;
+  color: #FFF;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-shadow: black .25px .25px .25px
+
+}
+
+header.page-header { /* selects header elements that have the class name of page-header */
+  /*padding-top: 32px;*/
+  background: url('../images/Home-Page-Background.jpg') no-repeat top center #fff;
+  background-size: cover;
+  min-height:600px;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px 75px;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+header div {
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+header nav, header .logo{
+  width:40%;
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+
+header nav ul li a:hover{
+  text-decoration: underline;
+}
+header .logo {
+  color: #fff;
+}
+
+header h3 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  color: #FFF;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-shadow: black .25px .25px .25px
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+
+footer {
+  padding: 20px 0 20px;
+  background: rgba(242,244,246, 1);
+  text-align: center;
+}
+
+footer .logo {
+  color: rgb(113,122,128);
+  margin: 20px;
+}
+
+footer p {
+  font-size: 9px;
+  color: rgb(113,122,128);
+  font-weight: 700;
+}
+
+footer nav {
+  display: inline-block;
+  justify-content: space-between;
+}
+
+footer nav ul {
+  display: flex;
+}
+
+footer nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: black;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+footer nav ul li a:hover{
+  text-decoration: underline;
+}
+
+footer nav div {
+  align-items: center;
+}
+
+.social-icons-container{
+    margin: 0 auto;  /* centers this icon container relative to its parent */
+    width: 100px;
+    display: flex;  /* allows us to easily space its children (the individual icons) */
+    justify-content: space-between;
+}
+
+
+input {
+  font-size: 10px;
+  margin-bottom: 1em;
+  border: 1px solid black;
+}
+
+form {
+  width: 20%;
+  display:flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+input[type=submit] {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  margin: 10px;
+}
+
+#gender {
+  display: flex;
+  justify-content: space-around;
+}
+
+input[name=gender] + label::before{
+  content: "";
+  display: block;
+  width:1em;
+  height:1em;
+  background:white;
+  border: 1px solid black;
+}
+
+input[name=gender]:checked + label::before{
+/*   background: black; */
+  content: "\2713";
+  color: blue;
+  text-align: center;
+}
+
+input[name=gender]{
+  display:none;
+}
+
+#services {
+  display: flex;
+  justify-content: space-around;
+}
+
+input[name=service] + label::before{
+  content: "";
+  display: block;
+  width:1em;
+  height:1em;
+  background:white;
+  border: 1px solid black;
+}
+
+input[name=service]:checked + label::before{
+/*   background: black; */
+  content: "\2715";
+  color: blue;
+  text-align: center;
+}
+
+input[name=service]{
+  display:none;
+}

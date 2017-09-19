@@ -1,0 +1,478 @@
+
+/******************************************
+/* SETUP
+/*******************************************/
+
+* {
+
+  box-sizing: border-box; 
+}
+
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+#homepage {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.shop-button:hover {
+  background-color: white;
+  color: black;
+  opacity: 0.5;
+}
+
+a.collection-button:hover {
+  background-color: white;
+  color: black;
+  opacity: 0.5;
+}
+
+header nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+
+header nav ul li a:hover{
+  text-decoration: underline;
+}
+
+footer nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: black;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+footer nav ul li a:hover{
+  text-decoration: underline;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+body {
+  background: #fff;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 600px 330px 580px 550px 900px 150px 200px;
+
+  grid-template-areas:  "a"
+                        "b"
+                        "c"
+                        "d"
+                        "e"
+                        "f"
+                        "g";
+  grid-gap: 10px;
+  font-size: 12px;
+  line-height: 1.4;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin: 0;
+
+}
+
+header.page-header { /* selects header elements that have the class name of page-header */
+  /*padding-top: 32px;*/
+  background: url('../images/Home-Page-Background.jpg') no-repeat top center #fff;
+  background-size: cover;
+  min-height:600px;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px 75px;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  grid-area: a;
+}
+
+header nav, header .logo{
+  width:40%;
+}
+
+.logo {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+header .hero-text {
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.primary {
+  margin-top:25px;
+}
+
+h2 {
+
+  font-size: 20px;
+  color: #FFF;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-shadow: black .25px .25px .25px;
+  text-align: center;
+
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  color: #FFF;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-shadow: black .25px .25px .25px
+}
+
+.second-image {
+  width: 100%;
+  z-index: 0;
+  padding: 0;
+}
+
+.shop-button {
+  border-radius: 0px;
+  border: 1px solid white;
+  font-weight: 300;
+  margin-top: 10px;
+  padding: 15px 0;
+  width: 200px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-align: center;
+  display: block;
+  color:#fff;
+  margin: 0 auto;
+}
+
+.collection-button {
+  border-radius: 0px;
+  border: 1px solid white;
+  font-weight: 400;
+  padding: 15px 0;
+  width: 100px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-align: center;
+  color:#fff;
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%); /*moves it up half of the h4's own height, and to the left half of its own height */
+}
+
+#collections {
+  grid-area: b;
+  padding-top: 20px;
+  padding: bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#collections div {
+  width: 25%;
+  position: relative;
+  text-align: center;
+}
+
+#collections div img {
+  width: 300px;
+  height: 300px;
+}
+
+.secondary-image-container {
+  grid-area: c;
+  padding-top: 20px;
+}
+
+.secondary-image img {
+ display: block;
+ margin: 0 auto;
+}
+
+#third-images-container {
+  grid-area: d;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.third-images {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.black-bodysuit {
+  width: 40%;
+  position: relative;
+}
+
+.black-tank {
+  width: 40%;
+  position: relative;
+}
+
+.fourth-image-container {
+  grid-area: e;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.fourth-image img {
+ display: block;
+ margin: 0 auto;
+}
+
+#testimonial {
+  grid-area: f;
+  padding: 40px 0 70px;
+  color: rgb(142,149,146);
+  letter-spacing: 2px;
+}
+
+blockquote {
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  width: 580px;
+  margin: 0 auto;
+}
+
+blockquote cite {
+  font-weight: 500;
+  font-size: 14px;
+  display: block;
+  margin:5px;
+  font-style: normal;
+}
+
+.second-image {
+  margin: 30px 0;
+  padding: 0;
+}
+
+footer {
+  grid-area: g;
+  padding: 20px 0 20px;
+  background: rgba(242,244,246, 1);
+  text-align: center;
+}
+
+footer .logo {
+  color: rgb(113,122,128);
+  margin: 20px;
+}
+
+footer p {
+  font-size: 9px;
+  color: rgb(113,122,128);
+  font-weight: 700;
+}
+
+footer nav {
+  display: inline-block;
+  justify-content: space-between;
+}
+
+footer nav ul {
+  display: flex;
+}
+
+footer nav div {
+  align-items: center;
+}
+
+.social-icons-container{
+    margin: 0 auto;  /* centers this icon container relative to its parent */
+    width: 100px;
+    display: flex;  /* allows us to easily space its children (the individual icons) */
+    justify-content: space-between;
+}
+
+/*MOBILE*/
+
+@media screen and (max-width: 780px){
+
+body {
+  font-size: 1.5em;
+}
+
+body.homepage { 
+display: grid;
+grid-row-gap: 30px;
+min-height: 100vh;
+grid-template-columns: 100%;
+grid-template-rows: minmax(150px, auto) minmax(100px, auto) minmax(100px, auto) minmax(100px, auto) minmax(100px, auto) minmax(75px, auto);
+grid-template-areas: "a"
+                     "b" 
+                     "c"
+                     "d"
+                     "e"
+                     "f"
+                     "g"
+
+}
+
+header.page-header {
+  max-height: auto;
+  min-height: auto;
+  grid-area: a;
+  flex-direction: column;
+}
+
+header .primary {
+  max-height: 25vh;
+}
+
+header nav {
+  max-height: 0;
+  transition: 1s all;
+  overflow:hidden;
+  justify-content: center;
+}
+
+nav.open{
+  max-height: 50vh;
+}
+
+header ul{
+  flex-direction: column;
+  text-align:center;
+  padding-left: 0;
+}
+
+.menu {
+  display: block;
+  width:auto;
+  padding:0px;
+  width:2em;
+  background:none;
+}
+
+.menu div {
+  height: 2px;
+  width:100%;
+  background:white;
+  margin: .25em 0;
+}
+
+.menu:hover {
+  cursor:pointer;
+}
+
+.primary {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.secondary.open{
+  max-height: 75vh;
+  align-self: center;
+}
+
+.hero-text {
+  width: 100%;
+  display: none;
+}
+
+.shop-button {
+  font-size: 1em;
+  width: 250px;
+}
+
+#collections {
+  grid-area: b;
+  flex-direction: column;
+}
+
+#collections div {
+  width: 100%;
+}
+
+#collections div img {
+  width: 100%;
+  height: auto;
+}
+
+.collection-button {
+  width: 200px;
+  font-size: 1em;
+}
+
+.secondary-image-container {
+  grid-area: c;
+}
+
+.secondary-image img {
+  width: 100%;
+  height: auto;
+}
+
+#third-images-container {
+  grid-area: d;
+}
+
+.third-images {
+  flex-direction: column;
+}
+
+.fourth-image-container {
+  grid-area: e;
+}
+
+.fourth-image img {
+  width: 100%;
+  height: auto;
+}
+
+#testimonial {
+  grid-area: f
+}
+
+footer {
+  grid-area: g;
+  font-size: .75em;
+}
+
+footer nav ul {
+  flex-direction: column;
+  padding-left: 0;
+}
+
+}
+

@@ -1,0 +1,324 @@
+
+/******************************************
+/* SETUP
+/*******************************************/
+
+* {
+
+  box-sizing: border-box; 
+}
+
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+#login {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+header nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+
+header nav ul li a:hover{
+  text-decoration: underline;
+}
+
+footer nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: black;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+footer nav ul li a:hover{
+  text-decoration: underline;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+body {
+  background: #fff;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 400px 400px 200px;
+
+  grid-template-areas:  "a"
+                        "b"
+                        "c";
+  grid-gap: 10px;
+  font-size: 12px;
+  line-height: 1.4;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  
+  margin: 0;
+
+}
+
+header.page-header { /* selects header elements that have the class name of page-header */
+  /*padding-top: 32px;*/
+  background: url('../images/register.jpg') no-repeat top center #fff;
+  background-size: cover;
+  min-height:400px;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px 75px;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  grid-area: a;
+}
+
+header nav, header .logo{
+  width:40%;
+}
+
+.logo {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+header .hero-text {
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.primary {
+  margin-top:25px;
+}
+
+h2 {
+
+  font-size: 20px;
+  color: #FFF;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-shadow: black .25px .25px .25px;
+  text-align: center;
+
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  color: #FFF;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-shadow: black .25px .25px .25px
+}
+
+input {
+  grid-area: b;
+  font-size: 10px;
+  margin-bottom: 1em;
+  border: 1px solid black;
+}
+
+.form-container {
+  margin: 0 auto;
+  font-size: 16px;
+  color: #000;
+}
+
+.register {
+  width: 40%;
+  display:flex;
+  flex-direction: column;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+input {
+  letter-spacing: 2px;
+}
+
+input[type=submit] {
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+}
+
+input[type="submit"]:hover {
+  background-color: black;
+  color: white;
+}
+
+footer {
+  grid-area: c;
+  padding: 20px 0 20px;
+  background: rgba(242,244,246, 1);
+  text-align: center;
+}
+
+footer .logo {
+  color: rgb(113,122,128);
+  margin: 20px;
+}
+
+footer p {
+  font-size: 9px;
+  color: rgb(113,122,128);
+  font-weight: 700;
+}
+
+footer nav {
+  display: inline-block;
+  justify-content: space-between;
+}
+
+footer nav ul {
+  display: flex;
+}
+
+footer nav div {
+  align-items: center;
+}
+
+.social-icons-container{
+    margin: 0 auto;  /* centers this icon container relative to its parent */
+    width: 100px;
+    display: flex;  /* allows us to easily space its children (the individual icons) */
+    justify-content: space-between;
+}
+
+/*MOBILE*/
+
+@media screen and (max-width: 780px){
+
+  body {
+    font-size: 1.5em;
+  }
+
+  body.login { 
+  display: grid;
+  grid-row-gap: 30px;
+  min-height: 100vh;
+  grid-template-columns: 100%;
+  grid-template-rows: minmax(100px, auto) minmax(350px, auto) minmax(75px, auto);
+  grid-template-areas: "a"
+                       "b" 
+                       "c";
+
+  }
+
+header.page-header {
+  max-height: auto;
+  min-height: auto;
+  grid-area: a;
+  flex-direction: column;
+}
+
+header .primary {
+  max-height: 25vh;
+}
+
+header nav {
+  max-height: 0;
+  transition: 1s all;
+  overflow:hidden;
+  justify-content: center;
+}
+
+nav.open{
+  max-height: 50vh;
+}
+
+header ul{
+  flex-direction: column;
+  text-align:center;
+  padding-left: 0;
+}
+
+.menu {
+  display: block;
+  width:auto;
+  padding:0px;
+  width:2em;
+  background:none;
+}
+
+.menu div {
+  height: 2px;
+  width:100%;
+  background:white;
+  margin: .25em 0;
+}
+
+.menu:hover {
+  cursor:pointer;
+}
+
+.primary {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.secondary.open{
+  max-height: 75vh;
+  align-self: center;
+}
+
+.hero-text {
+  width: 100%;
+  display: none;
+}
+
+.register {
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 100;
+  letter-spacing: 2px;
+  position: relative
+}
+
+footer {
+  font-size: .75em;
+}
+
+footer nav ul {
+  flex-direction: column;
+  padding-left: 0;
+}
+
+}
